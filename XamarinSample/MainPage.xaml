@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:local="clr-namespace:XamarinSample" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinSample.MainPage">
+
+    <!--<StackLayout>
+        -->
+    <!-- Place new controls here -->
+    <!--       
+        <Button BackgroundColor="Blue" TextColor="Yellow" Text="Browse" WidthRequest="50" HeightRequest="30" Clicked="Button_Clicked"/>
+    </StackLayout>-->
+
+    <StackLayout BackgroundColor="White">
+        <Label Text="Choose PDF file" TextColor="Black"  />
+        <StackLayout x:Name="MainStack" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"  />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Browse" HeightRequest="40" TextColor="Black" WidthRequest="80" Grid.Column="0" Clicked="btnBrowse"/>
+                <Label Grid.Column="1" x:Name="lblPdfName" TextColor="Blue" VerticalTextAlignment="End"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout x:Name="pdfStack">
+            <local:PdfView x:Name="PdfDocView"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
